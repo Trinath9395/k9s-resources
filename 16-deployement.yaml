@@ -1,0 +1,27 @@
+apiVersion: app/v1 
+kind: Deployment 
+metadata: 
+  name: deployment 
+  labels: 
+    app: nginx 
+    tier: frontend 
+    purpose: deployment 
+spec: 
+  replicas: 2 
+  selector: 
+    matchLabels: 
+    app: nginx 
+    tier: frontend 
+    purpose: deployment 
+  template: 
+    metadata: 
+    lebels: 
+      app: nginx 
+      tier: frontend 
+      purpose: deployment
+    spec: 
+      containers: 
+      - name: nginx 
+        image: nginx:1.14.2 
+        ports: 
+        - containerPort: 80
