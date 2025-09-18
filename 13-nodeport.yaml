@@ -9,6 +9,7 @@ spec:
     environment: dev 
     componet: backend 
     version: "1.0.0"
+    demo: nodeport
   ports: 
   - protocol: TCP 
     port: 80 
@@ -18,12 +19,13 @@ spec:
 apiVersion: v1 
 kind: Pod 
 metadata: 
-  name: nginx 
+  name: nginx-node
   labels:
     project: expense 
     environemt: dev 
     component: backend
     version: "1.0.0"
+    demo: nodeport
 spec: 
   containers: 
   - name: nginx 
