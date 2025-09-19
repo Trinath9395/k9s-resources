@@ -1,12 +1,15 @@
-apiVersion: v1 
-kind: PersistantVolume 
-metadata: 
-  name: ebs-static 
-spec: 
-  accessmode: 
-  -  ReadWriteOnce
-  capacity: 20Gi 
-  csi: 
-    driver: ebs.csi.aws.com 
-    fsType: ext4 
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: ebs-static
+spec:
+  capacity:
+    storage: 20Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  csi:
+    driver: ebs.csi.aws.com
+    fsType: ext4
     volumeHandle: vol-06cfee6082902d43b
+
