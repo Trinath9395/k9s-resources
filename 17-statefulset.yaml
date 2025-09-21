@@ -24,7 +24,7 @@ spec:
       app: nginx
       demo: statefulset
   serviceName: "nginx-headless"  
-  replicas: 2
+  replicas: 3
   minReadySeconds: 10
   template:
     metadata:
